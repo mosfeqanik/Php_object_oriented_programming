@@ -10,17 +10,10 @@
 		$filesize=$_FILES["image"]["size"];
 		move_uploaded_file($tmp_file, "uploads/". $destination);
 		echo "</br> uploaded";
-		//  var_dump($tmp_file);
-		if ($filesize<1000000) {
-			echo "</br>"."file is good";
-			echo "</br>".$filesize;
-		}
-		else{
-			echo "</br>"."file is over capable size";
-			echo "</br>".$filesize;
-
-		}
-		
+		//  var_dump($tmp_file);]
+		$filetype=$_FILES["image"]["type"];
+			echo "</br>"."file is good"."</br>".$filetype;
+			echo "</br>".$filetype;
 	}
 
 
