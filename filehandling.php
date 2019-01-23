@@ -3,7 +3,12 @@
 	if (isset($_POST["submit"])) {
 		// echo "clicked";
 		$tmp_file=$_FILES["image"]["tmp_name"];  //tmp_name will be
-		var_dump($tmp_file);
+		echo  $_FILES["image"]["tmp_name"];
+		echo "</br>";
+		echo  $_FILES["image"]["name"];
+		$destination= $_FILES["image"]["name"];
+		move_uploaded_file($tmp_file, "uploads/". $destination);
+		// var_dump($tmp_file);
 	}
 
 
