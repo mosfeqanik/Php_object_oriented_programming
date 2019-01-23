@@ -17,7 +17,4 @@ $bmw->printModel();
 echo "</br>".$bmw->model;
 
 
-
-
-
 ?>
