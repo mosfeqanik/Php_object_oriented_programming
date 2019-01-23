@@ -34,7 +34,7 @@
 </head>
 <body>
 	<form action="" method="post" enctype="multipart/form-data">  <!-- multipart/form-data -->
-		<input type="file" name="image">
+		<input type="file" name="image" accept="images/*"> <!-- accept="images/jpeg" -->
 		<input type="submit" name="submit"value="upload">
 	</form>
 </body>
