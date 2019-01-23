@@ -8,12 +8,23 @@
 		echo  "filename is      ".$_FILES["image"]["name"];
 		$destination= $_FILES["image"]["name"];
 		$filesize=$_FILES["image"]["size"];
-		move_uploaded_file($tmp_file, "uploads/". $destination);
-		echo "</br> uploaded";
+		// 
+		
 		//  var_dump($tmp_file);]
 		$filetype=$_FILES["image"]["type"];
-			echo "</br>"."file is good"."</br>".$filetype;
-			echo "</br>".$filetype;
+		// 	echo "</br>"."file is good"."</br>".$filetype;
+		echo "</br>".$filetype;
+		if($filetype=="image/png"){
+			move_uploaded_file($tmp_file, "uploads/". $destination);
+			echo "</br> uploaded and it is a png file";
+
+		}
+		else{
+			echo "</br> error";
+		}
+
+
+
 	}
 
 
