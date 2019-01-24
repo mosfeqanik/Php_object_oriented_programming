@@ -16,6 +16,14 @@ function simpleFunction()
 // run simple function
 simpleFunction();
 
+// function with param
+function sayhello($name)
+{
+	echo "Hello <br>";
+}
+sayhello("joe");
+sayhello("bob");
+
 
 
 

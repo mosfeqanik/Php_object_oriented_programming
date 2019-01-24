@@ -13,17 +13,20 @@ class Assignment
 	{
 		$this->Number1=$Num1;
 		$this->Number2=$Num2;
+		// echo $Num1,$Num2."<br>";
 
 	}
-	public function setPrint($Number1=$Num1,$Number2=$Num2)
+	public function setPrint()
 	{	
+		$this->Number1=$Num1;
+		$this->Number2=$Num2;
 		if($Num1>$Num2)
 		{
-			echo "$Number1 is greater";
+			echo $this->Num1. "is greater";
 		}
 		else
 		{
-			echo "$Number2 is greater";
+			echo $this->$Num2. "is greater";
 
 		}
 	}
