@@ -12,22 +12,25 @@
 
 */
 	$num=5;
+	echo $num;
 	if ($num==5) {
-		echo "it is 5<br>";
+		echo "it $num is 5<br>";
 	}
 	else
 	{
-		echo "it is not 5 <br>";
+		echo "it $num is not 5 <br>";
 	}
 
 
 	$num2=5;
+	echo $num2;
+
 	if ($num2===5) {
-		echo "it is not 5 string<br>";
+		echo "it $num2 is not 5 string<br>";
 	}
 	else
 	{
-		echo "it is  5 string<br>";
+		echo "it $num2 is  5 string<br>";
 	}
 
 
@@ -38,15 +41,42 @@
 	{
 		if ($num3<10) 
 		{
-			echo "the num is between 5 to 10 ";
+			echo "the $num3 is between 5 to 10 <br>";
 		}
 	}
 	else
 	{
-			echo "the num is not between 5 to 10 ";
+			echo "the $num3 is not between 5 to 10 <br>";
 
 	}
 	
+/*
+&& AND 
+|| or
+XOR
+*/
+$num4=6;
+	if ($num4>5 && $num4<10) // example of AND
+	{
+			echo "the $num4 is between 5 to 10 <br>";
+	}
+	else
+	{
+			echo "the $num4 is not between 5 to 10 <br> ";
+
+	}
+	
+
+$num5=11;
+	if ($num5>5 || $num5<10) // example of OR
+	{
+			echo "the $num5 is between 5 to 10 <br>";
+	}
+	else
+	{
+			echo "the $num5 is not between 5 to 10 <br> ";
+
+	}
 
 
 
