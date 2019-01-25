@@ -79,6 +79,18 @@ $num5=11;
 	}
 
 
+$num6=11;
+	if ($num6<10 XOR $num5>10) // example of XOR
+	{
+			echo "the $num6 is between 5 to 10 <br>";
+	}
+	else
+	{
+			echo "the $num6 is not between 5 to 10 <br> ";
+
+	}
+
+
 
 
 
