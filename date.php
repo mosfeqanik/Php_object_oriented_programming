@@ -26,14 +26,28 @@
 
 	// Set Time Zone
 	date_default_timezone_set('Asia/Dhaka');
+	
 	$timestamp = mktime(8, 14, 54, 9, 02, 1996);
 	echo "<br>";
 	echo date('Y/m/d h:i.sa', $timestamp);
+	
 	$timestamp1 = strtotime('7:00pm Merch 22 2016');
 	echo "<br>";
 	echo date('Y/m/d h:i.sa', $timestamp1);
+	
 	$timestamp2 = strtotime('tomorrow');
 	echo "<br>";
 	echo date('Y/m/d h:i.sa', $timestamp2);
+	
+	$timestamp3 = strtotime('next Sunday');
+	echo "<br>";
+	echo date('Y/m/d h:i.sa', $timestamp3);
+	
+	$timestamp4 = strtotime('+2 month');
+	echo "<br>";
+	echo date('Y/m/d h:i.sa', $timestamp4);
+   //php manual date function 
+
+
 
 ?>
