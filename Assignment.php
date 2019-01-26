@@ -18,15 +18,13 @@ class Assignment
 	}
 	public function setPrint()
 	{	
-		$this->Number1=$Num1;
-		$this->Number2=$Num2;
-		if($Num1>$Num2)
+		if($this->Number1>$this->Number2)
 		{
-			echo $this->Num1. "is greater";
+			echo $this->Number1. "  is greater";
 		}
 		else
 		{
-			echo $this->$Num2. "is greater";
+			echo $this->Number2. "  is greater";
 
 		}
 	}
@@ -38,3 +36,7 @@ $math->setPrint();
 
 
 ?>
+
+
+
+
