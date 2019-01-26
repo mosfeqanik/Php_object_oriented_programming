@@ -4,17 +4,16 @@ class Car
 {
 	public $model="GTR";
 
-	public function printModel()
+	public function modelPrint()
 	{
-		 echo $this->model;
+		echo $this->model;
 	}
-
-
-
 }
-$bmw = new Car;
-$bmw->printModel();
-echo "</br>".$bmw->model;
+
+$bmw=new Car;
+$bmw->modelPrint();
+
+
 
 
 ?>
