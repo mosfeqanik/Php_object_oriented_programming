@@ -4,10 +4,11 @@ class Student
 {
 	public $student="i am excuting <br>";
 
-	public function __construct()
+	public function __construct($name)
 	{	
-		
-		echo $this->student;
+		$this->student=$name;
+		echo $name;
+		// echo $this->student;
 	}
 	public function print_name()
 	{
@@ -19,7 +20,7 @@ class Student
 	}
 
 }
-$anik=new Student();
+$anik=new Student("anik<br>");
 echo $anik->print_name();
 
 
