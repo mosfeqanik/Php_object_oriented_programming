@@ -8,7 +8,7 @@ class St
 		echo "mentor is teaching in $this->classroom <br>";
 	}
 }
-class ct extends St
+class ct extends St //parents always stay behind and support
 {
 	public $studentnumber=15;
 	public function learn()
