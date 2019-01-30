@@ -1,5 +1,6 @@
 <?php 
 
+namespace Uccomputerstore\Domain;
 	class Uccomputer
 	{
 
@@ -37,7 +38,14 @@
 		{
 			return self::$lastid;
 		}
-
+		public static function getproductname()
+		{
+			return $this->productname;
+		}
+		public static function setproductname()
+		{
+			echo $this->productname;
+		}
 	}
 
 
