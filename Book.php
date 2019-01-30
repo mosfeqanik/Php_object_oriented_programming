@@ -21,7 +21,7 @@ class Book
 	}
 	public function __toString()
 	{
-		$result=$this->tittle."By".$this->author."<br>";
+		$result=$this->tittle." By ".$this->author."<br>";
 		if(!$this->available)
 		{
 			$result="not avaiable";
