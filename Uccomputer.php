@@ -1,0 +1,44 @@
+<?php 
+
+	class Uccomputer
+	{
+
+		public static $lastid=0;
+		public $id;
+		public $productname;
+		public $customername;
+		public $deliverytime;
+
+
+		public function __construct($id,$productname,$customername,$deliverytime)
+		{
+
+			if ($id == null) {
+				$this->id = ++self::$lastid;
+			}
+			else
+			{	
+				$this->id=$id;
+				if($id > self::$lastid)
+				{
+					self::$lastid=$id;
+				}
+
+			}
+
+			$this->productname=$productname;
+			$this->deliverytime=$deliverytime;
+		}
+
+
+
+		//accesor
+		public static function getlastid()
+		{
+			return self::$lastid;
+		}
+
+	}
+
+
+?>
