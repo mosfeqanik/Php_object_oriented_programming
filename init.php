@@ -17,6 +17,11 @@ var_dump($firstcustomer->getSurname());
 echo "<br>";
 var_dump($firstcustomer->getFullname());
 echo "<br>";
+var_dump($firstcustomer->getEmail());
+echo "<br>";
+var_dump($firstcustomer->setEmail("Mosfeqanik01@gmail.com"));
+echo "<br>";
+var_dump($firstcustomer->getEmail());
 
 
 

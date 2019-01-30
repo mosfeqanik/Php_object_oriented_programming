@@ -27,7 +27,17 @@ class Customer
 	}
 	public function getFullname()
 	{
-		return $this->firstname." ".$this->surname."<br>";
+		return strtoupper($this->firstname." ".$this->surname."<br>");
+	}
+	public function getEmail()
+	{
+		return $this->email;
+	}
+	public function setEmail($email)
+	{
+		$this->email=$email;
+		return $email;
+
 	}
 
 
