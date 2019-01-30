@@ -30,7 +30,7 @@
 			$this->deliverytime=$deliverytime;
 		}
 
-
+		//	self:: is for static properties and method
 
 		//accesor
 		public static function getlastid()
