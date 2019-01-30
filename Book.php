@@ -11,7 +11,7 @@ class Book
 	//methods are like function
 
 
-	public function __construct($isbn,$tittle,$author,$available)
+	public function __construct(int $isbn,string $tittle,string $author,int $available)
 	{
 		$this->isbn=$isbn;
 		$this->tittle=$tittle;
@@ -19,9 +19,9 @@ class Book
 		$this->available=$available;
 
 	}
-	public function getprintablename()
+	public function __toString()
 	{
-		$result=$this->tittle."By".$this->author;
+		$result=$this->tittle."By".$this->author."<br>";
 		if(!$this->available)
 		{
 			$result="not avaiable";
@@ -44,7 +44,7 @@ class Book
 
 }
 $harry_potter=new Book(3945664,"harry potter and the philosopher's stone","J. K. Rowling",12);
-echo $harry_potter->getprintablename();
+echo $harry_potter;
 
 if ($harry_potter->getcopy()) 
 {
