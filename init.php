@@ -6,7 +6,19 @@ use Uccomputerstore\Domain\Owner as ownerdetails;
 
 // use the namespace the as the keyword
 
+// autoloader function to autoload classes
+function autoloader($classname)
+{
+	$lastSlash = strpos($classname,'\\')+1;
+	$classname = substr($classname,$lastSlash);
+	$directory = str_replace('\\','/',$classname);
+	$filename = __DIR__.'/'.$directory.'.php';
+	require_once $filename;
+}
+spl_autoload("autoloader");
 
+
+// lets require class
 include 'Domain/Uccomputer.php';
 include 'Domain/Owner.php';
 
@@ -18,36 +30,36 @@ include 'Customer.php';
 
 
 
+//instantiate
+$harry_potter=new Book(3945664,"harry potter and the philosopher's stone","J. K. Rowling",12);
+echo $harry_potter;
 
-// $harry_potter=new Book(3945664,"harry potter and the philosopher's stone","J. K. Rowling",12);
-// echo $harry_potter;
-
-// $firstcustomer=new Customer(3,"Anik","Mosfeq","Mosfeq@gmail.com");
-// var_dump($harry_potter);
-// echo "<br>";
-// var_dump($firstcustomer->getFirstname());
-// echo "<br>";
-// var_dump($firstcustomer->getSurname());
-// echo "<br>";
-// var_dump($firstcustomer->getFullname());
-// echo "<br>";
-// var_dump($firstcustomer->getEmail());
-// echo "<br>";
-// var_dump($firstcustomer->setEmail("Mosfeqanik01@gmail.com"));
-// echo "<br>";
-// var_dump($firstcustomer->getEmail());
+$firstcustomer=new Customer(3,"Anik","Mosfeq","Mosfeq@gmail.com");
+var_dump($harry_potter);
+echo "<br>";
+var_dump($firstcustomer->getFirstname());
+echo "<br>";
+var_dump($firstcustomer->getSurname());
+echo "<br>";
+var_dump($firstcustomer->getFullname());
+echo "<br>";
+var_dump($firstcustomer->getEmail());
+echo "<br>";
+var_dump($firstcustomer->setEmail("Mosfeqanik01@gmail.com"));
+echo "<br>";
+var_dump($firstcustomer->getEmail());
 
 
-// if ($harry_potter->getcopy()) 
-// {
-// 	echo "here is your copy";
-// }
-// else
-// {
-// 	echo "sorry  there is no copy";
-// }
+if ($harry_potter->getcopy()) 
+{
+	echo "here is your copy";
+}
+else
+{
+	echo "sorry  there is no copy";
+}
 
-// var_dump($harry_potter);
+var_dump($harry_potter);
 
 
 
