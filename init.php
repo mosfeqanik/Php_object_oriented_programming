@@ -1,21 +1,25 @@
 <?php  
 
 
-use Uccomputerstore\Domain\Uccomputer as computerstore ;
-use Uccomputerstore\Domain\Owner as ownerdetails;
-
+// use Uccomputerstore\Domain\Uccomputer as computerstore ;
+// use Uccomputerstore\Domain\Owner as ownerdetails;
+// use Uccomputerstore\Person;
 // use the namespace the as the keyword
 
 // autoloader function to autoload classes
-function autoloader($classname)
-{
-	$lastSlash = strpos($classname,'\\')+1;
-	$classname = substr($classname,$lastSlash);
-	$directory = str_replace('\\','/',$classname);
-	$filename = __DIR__.'/'.$directory.'.php';
-	require_once $filename;
-}
-spl_autoload("autoloader");
+
+// https://www.tutorialspoint.com/php/php_function_strpos.htm
+// https://www.tutorialspoint.com/php/php_function_substr.htm
+// https://www.tutorialspoint.com/php/php_function_str_replace.htm
+// function autoloader($classname)
+// {
+// 	$lastSlash = strpos($classname,'\\')+1;
+// 	$classname = substr($classname,$lastSlash);
+// 	$directory = str_replace('\\','/',$classname);
+// 	$filename = __DIR__.'/'.$directory.'.php';
+// 	require_once $filename;
+// }
+// spl_autoload("autoloader");
 
 
 // lets require class
@@ -31,8 +35,8 @@ include 'Customer.php';
 
 
 //instantiate
-$harry_potter=new Book(3945664,"harry potter and the philosopher's stone","J. K. Rowling",12);
-echo $harry_potter;
+// $harry_potter=new Book(3945664,"harry potter and the philosopher's stone","J. K. Rowling",12);
+// echo $harry_potter;
 
 $firstcustomer=new Customer(3,"Anik","Mosfeq","Mosfeq@gmail.com");
 var_dump($harry_potter);
@@ -92,9 +96,9 @@ var_dump($harry_potter);
 // var_dump($sony::getlastid());
 
 
-$Mosfeqanik=new ownerdetails("anik","mirpur-1","01676667735");
-echo "<br>";
-var_dump($Mosfeqanik);
+// $Mosfeqanik=new ownerdetails("anik","mirpur-1","01676667735");
+// echo "<br>";
+// var_dump($Mosfeqanik);
 
 
 

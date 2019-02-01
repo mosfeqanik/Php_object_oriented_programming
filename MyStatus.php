@@ -1,4 +1,5 @@
 <?php 
+
 include "Gorib.php";
 class MyStatus implements Gorib
 {

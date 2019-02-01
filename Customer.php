@@ -1,30 +1,24 @@
 <?php
 
-class Customer
+namespace Uccomputerstore\;
+class Customer extends Person
 {
 	private $id;
-	private $firstname;
-	private $surname;
+	// private $firstname;
+	// private $surname;
 	private $email;
 
 
-	public function __construct($id,$firstname,$surname,$email)
-	{
+	public function __construct($id,$email)
+	{	
+
+		parent::__construct();
 		$this->id=$id;
-		$this->firstname=$firstname;
-		$this->surname=$surname;
+		
 		$this->email=$email;
 
 	}
-	public function getFirstname()
-	{
-		return $this->firstname;
-	}
-
-	public function getSurname()
-	{
-		return $this->surname;
-	}
+	
 	public function getFullname()
 	{
 		return strtoupper($this->firstname." ".$this->surname."<br>");

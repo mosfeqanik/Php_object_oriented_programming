@@ -1,5 +1,7 @@
 <?php 
 
+namespace Uccomputerstore\Domain;
+
 class Book
 {
 
