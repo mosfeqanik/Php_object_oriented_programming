@@ -2,7 +2,7 @@
 
 	if (isset($_POST["submit"])) {
 		// echo "clicked";
-		$tmp_file=$_FILES["image"]["tmp_name"];  //tmp_name will be
+		$tmp_file=$_FILES["image"]["tmp_name"];  //tmp_name will be not change because it is default
 		echo  "temporary file is       ".$_FILES["image"]["tmp_name"];
 		echo "</br>";
 		echo  "filename is      ".$_FILES["image"]["name"];
