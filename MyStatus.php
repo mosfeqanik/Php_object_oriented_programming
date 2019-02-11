@@ -15,7 +15,7 @@ class MyStatus implements Gorib
 
 $bank=new MyStatus();
 $bank->lowMOney();
-$bank->Homeless()
+$bank->Homeless();
 
 
 ?>
