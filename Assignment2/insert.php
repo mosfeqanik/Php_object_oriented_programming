@@ -14,7 +14,7 @@ if (isset($_POST['submit']))
 	$email=$_POST['email'];
 	$phone=$_POST['phone'];
 
-	$insert->save($name,$email,$phone);
+	$insert->save($name,$email,$phone);	
 	
 
 
@@ -28,6 +28,7 @@ if (isset($_POST['submit']))
 	<title>form</title>
 </head>
 <body>
+	<a href="show.php"> Show me the table</a>
 	<form action="" method="POST">
 		<label>Name</label>
 		<input type="text" name="name"><br>

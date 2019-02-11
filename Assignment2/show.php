@@ -3,7 +3,7 @@
 include 'Database.php';
 $show = new Database();
 $data= $show->read();
-print_r($data);
+// print_r($data);
 // foreach ($data as $key => $value) 
 // {
 // 	echo $value["name"]."<br>";
@@ -21,6 +21,7 @@ print_r($data);
 	<title>show details</title>
 </head>
 <body>
+	<a href="insert.php"> i want to insert data</a>
 	<table border="2px solid black">
 		<tr>
 			<th>Name</th>

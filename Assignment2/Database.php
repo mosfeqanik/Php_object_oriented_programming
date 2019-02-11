@@ -9,7 +9,7 @@ class Database implements Crud
 	{
 		$pdo = new PDO("mysql:host=localhost;dbname=ctg180","root","");
 		$this->conn=$pdo;
-		echo "inserted";
+		// echo "inserted";
 	}
 	public function save($name, $email, $phone)
 	{
@@ -36,7 +36,7 @@ class Database implements Crud
 			)
 
 		);
-		echo "Insert is successful";
+		echo "Insert is successful <br>";
 	}
 
 	public function read()
