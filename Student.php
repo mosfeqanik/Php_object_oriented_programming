@@ -1,5 +1,9 @@
 <?php
 
+
+use booo\anik;
+
+include 'Unique';
 class Student
 {
 	public $student="i am excuting <br>";
@@ -10,10 +14,11 @@ class Student
 		echo $name;
 		// echo $this->student;
 	}
-	public function print_name()
-	{
-		return "hello i am  print_name<br>";
-	}
+	
+	use Unique;
+
+
+
 	public function __destruct()
 	{
 		echo "i will go ";
