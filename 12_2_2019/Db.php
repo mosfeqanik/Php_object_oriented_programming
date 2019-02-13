@@ -40,7 +40,7 @@ class Db{
 	//Showing all
 	public function Show()
 	{
-		$Select="SELECT * FROM mobiles";
+		$Select="SELECT * FROM mobiles WHERE deleted_at IS NULL";
 		$statement=$this->conn->prepare($Select);
 		$statement->execute();
 		$result = $statement->fetchAll();
@@ -121,7 +121,7 @@ class Db{
 	public function softdelete($id)
 	{
 		$time = date("Y/m/d");
-		$temporay_delete="UPDATE mobiles SET deleted_id = :tim WHERE id =:id";
+		$temporay_delete="UPDATE mobiles SET deleted_at = :tim WHERE id =:id";
 		$statement=$this->conn->prepare($temporay_delete);
 		$statement->execute
 			(
