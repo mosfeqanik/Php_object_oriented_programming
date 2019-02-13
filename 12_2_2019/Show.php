@@ -11,11 +11,7 @@ $data= $shw->Show();
 // 	echo $value["price"]."<br>";
 
 // }
-if (isset($_GET["submit"])) {
-	$search=$_GET["search"];
-	$search_data= $shw->Range($search);
-	print_r($search_data);
-}
+
 
 
 ?>
@@ -35,8 +31,30 @@ if (isset($_GET["submit"])) {
 			<th>Model</th>
 			<th>Price</th>
 		</tr>
+
 		<?php
-			foreach ($data as $key =>$value ) {
+		// search mobile details
+		if (isset($_GET["submit"])) 
+		{
+			$search=$_GET["search"];
+			$search_data= $shw->Range($search);
+			print_r($search_data);
+			foreach ($search_data as $key =>$value ) 
+			{
+		?>
+		<tr>
+			<td><?php  echo $value['name'];?></td>
+			<td><?php  echo $value['model'];?></td>
+			<td><?php  echo $value['price'];?></td>
+		</tr>
+		<?php
+			
+			}
+		}
+		else
+			foreach ($data as $key =>$value ) 
+			{
+		
 			
 		?>
 		<tr>
@@ -45,8 +63,7 @@ if (isset($_GET["submit"])) {
 			<td><?php  echo $value['price'];?></td>
 		</tr>
 		<?php
-		
-			}	
+			}
 		?>
 	</table>
 	<h1><a href="index.php">For inserting data</a></h1>
