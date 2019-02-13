@@ -66,6 +66,9 @@ $data= $shw->Show();
 			<td>
 				<a href="Showbyid.php?id=<?php  echo $value['id'];?>">edit
 				</a>
+				||
+				<a href="delete.php?id=<?php  echo $value['id'];?>">delete
+				</a>
 			</td>
 
 		</tr>

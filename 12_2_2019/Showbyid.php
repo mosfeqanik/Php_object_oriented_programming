@@ -2,6 +2,20 @@
 include 'Db.php';
 $Showbyid = new Db();
 
+	if(isset($_POST["submit"]))
+		{	
+			$name=$_POST["name"];
+			$model=$_POST["model"];
+			$price=$_POST["price"];
+			$id=$_GET["id"];
+
+
+			echo $name."||".$model."||".$price."||".$id;
+			$Showbyid->update($name,$model,$price,$id);
+			echo "updated";
+			// print_r($result);
+
+		}
 		//Showing by id
 		if(isset($_GET["id"]))
 		{	
@@ -9,6 +23,7 @@ $Showbyid = new Db();
 			$result=$Showbyid->ShowById($id);
 			// print_r($result);
 
+		
 
 
 ?>
