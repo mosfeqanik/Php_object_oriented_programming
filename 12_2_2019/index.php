@@ -1,14 +1,11 @@
 <?php
+session_start()
 
 include 'Db.php';
 // $pdo = new PDO("mysql:host=localhost;dbname=ctg180","root","");
 
 // var_dump($pdo);
 // echo "<br>";
-
-
-
-
 $inst = new Db();
 
 if (isset($_POST['submit'])) 

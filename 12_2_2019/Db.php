@@ -37,6 +37,28 @@ class Db{
 	);
 	}
 
+
+	//registration method
+	public function register($username,$password)
+	{
+		$password=md5($password);
+		$registration_query="INSERT INTO mobiles (username, password)
+			VALUES (:username, :password)";
+	// 	var_dump($insert_query);
+ 	// 	echo "<br>";
+
+		$statement=$this->conn->prepare($registration_query);
+		$statement->execute
+	(
+		array
+		(
+			":username"=>$username,
+			":password"=>$password,
+		)
+	);
+	}
+
+
 	//reset
 	// public function reset()
 	// {
@@ -57,6 +79,7 @@ class Db{
 	
 	// }
 
+
 	//Showing all
 	public function Showall()
 	{
@@ -70,6 +93,7 @@ class Db{
 	
 	}
 
+
 	// show datas after 
 	public function Showtmp()
 	{
@@ -81,6 +105,7 @@ class Db{
 		return $result;
 	
 	}
+
 
 	//Showing By Range
 	public function Range($range)
@@ -103,6 +128,7 @@ class Db{
 		return $result;
 	
 	}
+
 	//Showing By Id
 	public function ShowById($id )
 	{
@@ -117,6 +143,7 @@ class Db{
 	return $result;
 	}
 	
+
 	//updating datas
 	public function update($name,$model,$price,$id)
 	{
@@ -136,6 +163,7 @@ class Db{
 	);
 	}
 
+
 	//permanent delete
 	public function Delete($id )
 	{
@@ -150,7 +178,7 @@ class Db{
 		return $result;
 	}
 
-
+	//soft delete
 	public function softdelete($id)
 	{
 		$time = date("Y/m/d");
