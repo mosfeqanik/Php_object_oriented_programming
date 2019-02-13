@@ -1,24 +1,21 @@
 <?php
 
-include 'Db.php';
+include 'Database.php';
 // $pdo = new PDO("mysql:host=localhost;dbname=ctg180","root","");
 
 // var_dump($pdo);
 // echo "<br>";
 
-
-
-
-$inst = new Db();
-
+$insert = new Database();
+// $insert->save();
 if (isset($_POST['submit'])) 
  {
 	$name=$_POST['name'];
-	$model=$_POST['model'];
-	$price=$_POST['price'];
+	$email=$_POST['email'];
+	$phone=$_POST['phone'];
 
-	$inst->insert($name,$model,$price);
-	echo "inserted";
+	$insert->save($name,$email,$phone);	
+	
 
 
 }
@@ -31,17 +28,15 @@ if (isset($_POST['submit']))
 	<title>form</title>
 </head>
 <body>
-
-	
+	<a href="show.php"> Show me the table</a>
 	<form action="" method="POST">
 		<label>Name</label>
 		<input type="text" name="name"><br>
-		<label>model</label>
-		<input type="text" name="model"><br>
-		<label>price</label>
-		<input type="text" name="price"><br>
+		<label>Email</label>
+		<input type="email" name="email"><br>
+		<label>Phone</label>
+		<input type="text" name="phone"><br>
 		<input type="submit" name="submit" value="Add Details">
 	</form>
-	<h1><a href="Show.php">Show all table</a></h1>
 </body>
 </html>
