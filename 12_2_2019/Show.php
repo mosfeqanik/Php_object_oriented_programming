@@ -30,6 +30,8 @@ $data= $shw->Show();
 			<th>Name</th>
 			<th>Model</th>
 			<th>Price</th>
+			<th>Action</th>
+
 		</tr>
 
 		<?php
@@ -38,7 +40,7 @@ $data= $shw->Show();
 		{
 			$search=$_GET["search"];
 			$search_data= $shw->Range($search);
-			print_r($search_data);
+			// print_r($search_data);
 			foreach ($search_data as $key =>$value ) 
 			{
 		?>
@@ -61,6 +63,11 @@ $data= $shw->Show();
 			<td><?php  echo $value['name'];?></td>
 			<td><?php  echo $value['model'];?></td>
 			<td><?php  echo $value['price'];?></td>
+			<td>
+				<a href="Showbyid.php?id=<?php  echo $value['id'];?>">edit
+				</a>
+			</td>
+
 		</tr>
 		<?php
 			}

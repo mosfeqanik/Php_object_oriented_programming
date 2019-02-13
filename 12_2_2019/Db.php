@@ -49,6 +49,13 @@ class Db{
 	}
 	public function Range($range)
 	{
+	if(empty($range))
+		{
+			$range="40000";
+		}
+
+
+
 	$Searchquery="SELECT * FROM mobiles WHERE price <= :range";
 	$statement=$this->conn->prepare($Searchquery);
 	$statement->execute
@@ -58,6 +65,21 @@ class Db{
 						':range' => $range 
 					)
 				);
+	$result = $statement->fetchAll();
+
+	return $result;
+	
+	}
+
+	public function ShowById($id )
+	{
+	$Select="SELECT * FROM mobiles WHERE id=:id";
+	$statement=$this->conn->prepare($Select);
+	$statement->execute
+	(
+		array(':id' =>$id  )
+
+	);
 	$result = $statement->fetchAll();
 
 	return $result;
