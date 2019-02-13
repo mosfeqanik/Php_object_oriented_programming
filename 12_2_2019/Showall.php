@@ -2,7 +2,7 @@
 
 include 'Db.php';
 $shw = new Db();
-$data= $shw->Showtmp();
+$data= $shw->Showall();
 // print_r($data);
 // foreach ($data as $key => $value) 
 // {

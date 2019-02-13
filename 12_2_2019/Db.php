@@ -37,8 +37,41 @@ class Db{
 	);
 	}
 
+	//reset
+	// public function reset()
+	// {
+	// 	$time = date("Y/m/d");
+	// 	$temporay_delete="UPDATE mobiles SET deleted_at = NULL WHERE ";
+	// 	$statement=$this->conn->prepare($temporay_delete);
+	// 	$statement->execute
+	// 		(
+	// 			array
+	// 			(
+	// 			':tim' => $time,
+	// 			':id' => $id
+	// 			)
+
+	// 		);
+	// 	// $statement->fetchAll();
+	// 	return 1;
+	
+	// }
+
 	//Showing all
-	public function Show()
+	public function Showall()
+	{
+
+		$Select="SELECT * FROM mobiles";
+		$statement=$this->conn->prepare($Select);
+		$statement->execute();
+		$result = $statement->fetchAll();
+
+		return $result;
+	
+	}
+
+	// show datas after 
+	public function Showtmp()
 	{
 		$Select="SELECT * FROM mobiles WHERE deleted_at IS NULL";
 		$statement=$this->conn->prepare($Select);
@@ -133,7 +166,6 @@ class Db{
 
 			);
 		// $statement->fetchAll();
-
 		return 1;
 	
 	}
