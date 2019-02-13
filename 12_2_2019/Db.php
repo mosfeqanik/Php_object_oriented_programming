@@ -42,7 +42,7 @@ class Db{
 	public function register($username,$password)
 	{
 		$password=md5($password);
-		$registration_query="INSERT INTO mobiles (username, password)
+		$registration_query="INSERT INTO users (username, password)
 			VALUES (:username, :password)";
 	// 	var_dump($insert_query);
  	// 	echo "<br>";
@@ -58,7 +58,23 @@ class Db{
 	);
 	}
 
+	public function login($username,$password)
+	{
 
+		$login="SELECT * FROM users WHERE username=:username AND password=:password";
+		$statement=$this->conn->prepare($login);
+		$statement->execute
+		(
+			array
+			(	':username' => $username,
+				':password' => md5($password)
+			)
+		);
+		$result = $statement->fetchAll();
+
+		return count($result);
+	
+	}
 	//reset
 	// public function reset()
 	// {
@@ -92,6 +108,7 @@ class Db{
 		return $result;
 	
 	}
+
 
 
 	// show datas after 
@@ -197,4 +214,9 @@ class Db{
 		return 1;
 	
 	}
+
+
+
+
 }
+

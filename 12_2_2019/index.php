@@ -1,5 +1,5 @@
 <?php
-session_start()
+session_start();
 
 include 'Db.php';
 // $pdo = new PDO("mysql:host=localhost;dbname=ctg180","root","");
@@ -29,7 +29,7 @@ if (isset($_POST['submit']))
 </head>
 <body>
 
-	
+	<a href="logout.php">logout</a>
 	<form action="" method="POST">
 		<label>Name</label>
 		<input type="text" name="name"><br>

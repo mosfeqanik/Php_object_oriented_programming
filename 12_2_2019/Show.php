@@ -1,4 +1,5 @@
 <?php  
+session_start();
 
 include 'Db.php';
 $shw = new Db();
@@ -21,6 +22,8 @@ $data= $shw->Showtmp();
 	<title>show details</title>
 </head>
 <body>
+	<a href="logout.php">logout</a>
+
 	<form action="" method="GET">
 		<input type="text" name="search">
 		<input type="submit" name="submit">
