@@ -69,6 +69,9 @@ $data= $shw->Show();
 				||
 				<a href="delete.php?id=<?php  echo $value['id'];?>">delete
 				</a>
+				||
+				<a href="softdelete.php?id=<?php  echo $value['id'];?>">Soft Delete
+				</a>
 			</td>
 
 		</tr>

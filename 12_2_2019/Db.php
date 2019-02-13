@@ -18,15 +18,15 @@ class Db{
 	// 	var_dump($insert_query);
  	// 	echo "<br>";
 
-	$statement=$this->conn->prepare($insert_query);
-	// var_dump($statement);
- 	// echo "<br>";
+		$statement=$this->conn->prepare($insert_query);
+		// var_dump($statement);
+	 	// echo "<br>";
 
-	// $statement->bindParam(":name",$name);
-	// $statement->bindParam(":model",$model);
-	// $statement->bindParam(":price",$price);
-	// $statement->bindValue();
-	$statement->execute
+		// $statement->bindParam(":name",$name);
+		// $statement->bindParam(":model",$model);
+		// $statement->bindParam(":price",$price);
+		// $statement->bindValue();
+		$statement->execute
 	(
 		array
 		(
@@ -40,47 +40,47 @@ class Db{
 	//Showing all
 	public function Show()
 	{
-	$Select="SELECT * FROM mobiles";
-	$statement=$this->conn->prepare($Select);
-	$statement->execute();
-	$result = $statement->fetchAll();
+		$Select="SELECT * FROM mobiles";
+		$statement=$this->conn->prepare($Select);
+		$statement->execute();
+		$result = $statement->fetchAll();
 
-	return $result;
+		return $result;
 	
 	}
 
 	//Showing By Range
 	public function Range($range)
 	{
-	if(empty($range))
-		{
-			$range="40000";
-		}
-	$Searchquery="SELECT * FROM mobiles WHERE price <= :range";
-	$statement=$this->conn->prepare($Searchquery);
-	$statement->execute
-				(
-					array
+		if(empty($range))
+			{
+				$range="40000";
+			}
+		$Searchquery="SELECT * FROM mobiles WHERE price <= :range";
+		$statement=$this->conn->prepare($Searchquery);
+		$statement->execute
 					(
-						':range' => $range 
-					)
-				);
-	$result = $statement->fetchAll();
+						array
+						(
+							':range' => $range 
+						)
+					);
+		$result = $statement->fetchAll();
 
-	return $result;
+		return $result;
 	
 	}
 	//Showing By Id
 	public function ShowById($id )
 	{
-	$Select="SELECT * FROM mobiles WHERE id=:id";
-	$statement=$this->conn->prepare($Select);
-	$statement->execute
-	(
-		array(':id' =>$id  )
+		$Select="SELECT * FROM mobiles WHERE id=:id";
+		$statement=$this->conn->prepare($Select);
+		$statement->execute
+		(
+			array(':id' =>$id  )
 
-	);
-	$result = $statement->fetchAll();
+		);
+		$result = $statement->fetchAll();
 	return $result;
 	}
 	
@@ -106,15 +106,35 @@ class Db{
 	//permanent delete
 	public function Delete($id )
 	{
-	$Select="DELETE FROM mobiles WHERE id=:id";
-	$statement=$this->conn->prepare($Select);
-	$statement->execute
-	(
-		array(':id' =>$id  )
+		$Select="DELETE FROM mobiles WHERE id=:id";
+		$statement=$this->conn->prepare($Select);
+		$statement->execute
+		(
+			array(':id' =>$id  )
 
-	);
-	$result = $statement->fetchAll();
-	return $result;
+		);
+		$result = $statement->fetchAll();
+		return $result;
 	}
 
+
+	public function softdelete($id)
+	{
+		$time = date("Y/m/d");
+		$temporay_delete="UPDATE mobiles SET deleted_id = :tim WHERE id =:id";
+		$statement=$this->conn->prepare($temporay_delete);
+		$statement->execute
+			(
+				array
+				(
+				':tim' => $time,
+				':id' => $id
+				)
+
+			);
+		// $statement->fetchAll();
+
+		return 1;
+	
+	}
 }
