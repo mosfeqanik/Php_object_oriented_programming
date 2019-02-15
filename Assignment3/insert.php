@@ -1,5 +1,6 @@
 <?php
 
+session_start();
 include 'Database.php';
 // $pdo = new PDO("mysql:host=localhost;dbname=ctg180","root","");
 

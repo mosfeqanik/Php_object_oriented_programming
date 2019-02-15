@@ -1,8 +1,12 @@
 <?php  
 
+// session_start();
 include 'Database.php';
 $show = new Database();
 $data= $show->read();
+$userdata= $show->readUserdata();
+
+
 // print_r($data);
 // foreach ($data as $key => $value) 
 // {
@@ -36,6 +40,35 @@ $data= $show->read();
 			<td><?php  echo $value['name'];?></td>
 			<td><?php  echo $value['email'];?></td>
 			<td><?php  echo $value['phone'];?></td>
+		</tr>
+		<?php
+		
+			}	
+		?>
+	</table>
+	<table border="2px solid black">
+		<tr>
+			<th>ID</th>
+			<th>Username</th>
+			<th>Action</th>
+		</tr>
+		<?php
+			foreach ($userdata as $key =>$value ) {
+			
+		?>
+		<tr>
+			<td><?php  echo $value['id'];?></td>
+			<td><?php  echo $value['username'];?></td>
+			<td>
+				<a href="Showbyid.php?id=<?php  echo $value['id'];?>">edit
+				</a>
+				||
+				<a href="delete.php?id=<?php  echo $value['id'];?>">delete
+				</a>
+				||
+				<a href="softdelete.php?id=<?php  echo $value['id'];?>">Soft Delete
+				</a>
+			</td>
 		</tr>
 		<?php
 		

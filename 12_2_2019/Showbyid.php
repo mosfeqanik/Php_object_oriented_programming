@@ -10,7 +10,7 @@ $Showbyid = new Db();
 			$id=$_GET["id"];
 
 
-			echo $name."||".$model."||".$price."||".$id;
+			echo $name."||".$model."||".$price."||".$id."<br>";
 			$Showbyid->update($name,$model,$price,$id);
 			echo "updated";
 			// print_r($result);
