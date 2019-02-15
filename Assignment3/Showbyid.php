@@ -1,5 +1,6 @@
 <?php
 
+session_start();
 include 'Database.php';
 $Showbyid = new Database();
 

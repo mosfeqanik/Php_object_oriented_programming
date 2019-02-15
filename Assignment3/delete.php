@@ -1,5 +1,6 @@
 <?php  
 
+session_start();
 include 'Database.php';
 $del = new Database();
 if(isset($_GET["id"]))

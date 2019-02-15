@@ -1,6 +1,6 @@
 <?php  
 
-// session_start();
+session_start();
 include 'Database.php';
 $show = new Database();
 $data= $show->read();
