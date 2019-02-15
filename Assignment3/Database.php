@@ -131,6 +131,20 @@ class Database implements Crud
 		)
 	);
 	}
+	//permanent delete
+	public function Delete($id )
+	{
+		$delete="DELETE FROM users WHERE id=:id";
+		$statement=$this->conn->prepare($delete);
+		$statement->execute
+		(
+			array(':id' =>$id  )
+
+		);
+		$result = $statement->fetchAll();
+		return $result;
+	}
+
 }
 
 

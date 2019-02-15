@@ -11,7 +11,7 @@ $Showbyid = new Database();
 
 
 			echo $username."||".$password."||".$id;
-			$Showbyid->update($username,$password);
+			$Showbyid->update($username,$password,$id);
 			echo "updated";
 			// print_r($result);
 
