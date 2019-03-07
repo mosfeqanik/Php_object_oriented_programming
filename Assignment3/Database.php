@@ -5,12 +5,16 @@ class Database implements Crud
 {	
 	public $conn;
 
+	//Database connection 
 	public function __construct()
 	{
 		$pdo = new PDO("mysql:host=localhost;dbname=ctg180assign","root","");
 		$this->conn=$pdo;
 		// echo "inserted";
 	}
+
+	//insertion to database 
+
 	public function save($name, $email, $phone)
 	{
 		$insert_query="INSERT INTO students (name, email, phone)
@@ -39,6 +43,7 @@ class Database implements Crud
 		echo "Insert is successful <br>";
 	}
 
+	//Show data  from students table from database 
 	public function read()
 	{
 		$Select="SELECT * FROM students";
@@ -50,6 +55,7 @@ class Database implements Crud
 	
 	}
 
+	//Show all data  from users table from database 
 	public function readUserdata()
 	{
 		$Select="SELECT * FROM users";
@@ -82,6 +88,7 @@ class Database implements Crud
 
 	}
 
+	//login method
 	public function login($username,$password)
 	{
 
@@ -113,6 +120,8 @@ class Database implements Crud
 		$result = $statement->fetchAll();
 	return $result;
 	}
+
+
 	// update method is created
 	public function update($username,$password,$id)
 	{	
@@ -131,6 +140,7 @@ class Database implements Crud
 		)
 	);
 	}
+
 	//permanent delete
 	public function Delete($id )
 	{
@@ -145,6 +155,7 @@ class Database implements Crud
 		return $result;
 	}
 
+	
 }
 
 

@@ -12,7 +12,7 @@ if (isset($_POST["submit"]))
 	$status=$login->login($username,$password);
 	if ($status==1) {
 		session_start();
-		$_SESSION['user']='true';
+		$_SESSION['user'] = 'true';
 		header("location:show.php");
 	}
 }
