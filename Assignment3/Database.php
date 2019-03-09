@@ -211,18 +211,19 @@ class Database implements Crud
 	public function softDeleteS($id)
 	{	
 		$time=date("Y-m-d");
-		$update_query="UPDATE students SET deleted_id $time=:tim WHERE id=:id";
+		$update_query="UPDATE students SET deleted_at=:tim WHERE id=:id";
 
 		$statement=$this->conn->prepare($update_query);
 		$statement->execute
 			(
 				array
 				(
-					":tim"=>$time
+					":tim"=>$time,
+					":id"=>$id
+
 
 				)
 			);
-	return 1;
 	}
 }
 
