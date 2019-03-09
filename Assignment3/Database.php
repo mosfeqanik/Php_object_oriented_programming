@@ -46,7 +46,7 @@ class Database implements Crud
 	//Show data  from students table from database 
 	public function read()
 	{
-		$Select="SELECT * FROM students";
+		$Select="SELECT * FROM students WHERE deleted_at IS NULL";
 		$statement=$this->conn->prepare($Select);
 		$statement->execute();
 		$result = $statement->fetchAll();
@@ -66,6 +66,7 @@ class Database implements Crud
 		return $result;
 	
 	}
+	
 	//registration method
 	public function register($username,$password)
 	{
@@ -122,6 +123,23 @@ class Database implements Crud
 	}
 
 
+	//Showing By id for mobiles
+	public function ShowByIdstudents($id )
+	{
+		$Select="SELECT * FROM students WHERE id=:id";
+		$statement=$this->conn->prepare($Select);
+		$statement->execute
+		(
+			array(':id' =>$id  )
+
+		);
+		$result = $statement->fetchAll();
+		return $result;
+	}
+
+
+
+
 	// update method is created
 	public function update($username,$password,$id)
 	{	
@@ -141,7 +159,26 @@ class Database implements Crud
 	);
 	}
 
-	//permanent delete
+	// update method is created
+	public function updateStudents($name,$email,$phone,$id)
+	{	
+		// $password=md5($password);
+		$update_query="UPDATE students SET name=:name, email=:email,phone=:phone WHERE id=:id";
+		$statement=$this->conn->prepare($update_query);
+		$statement->execute
+	(
+		array
+		(
+			":name"=>$name,
+			":email"=>$email,
+			":phone"=>$phone,
+			":id"=>$id,
+
+		)
+	);
+	}
+
+	//permanent delete for users
 	public function Delete($id )
 	{
 		$delete="DELETE FROM users WHERE id=:id";
@@ -155,7 +192,38 @@ class Database implements Crud
 		return $result;
 	}
 
+	//permanent delete for students
 	
+	public function deleteFromStudents($id)
+	{
+		$delete="DELETE FROM students WHERE id=:id";
+		$statement=$this->conn->prepare($delete);
+		$statement->execute
+		(
+			array(':id' =>$id  )
+
+		);
+		$result = $statement->fetchAll();
+		return $result;
+	}
+
+	//softdelete for students
+	public function softDeleteS($id)
+	{	
+		$time=date("Y-m-d");
+		$update_query="UPDATE students SET deleted_id $time=:tim WHERE id=:id";
+
+		$statement=$this->conn->prepare($update_query);
+		$statement->execute
+			(
+				array
+				(
+					":tim"=>$time
+
+				)
+			);
+	return 1;
+	}
 }
 
 

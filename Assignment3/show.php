@@ -31,6 +31,7 @@ $userdata= $show->readUserdata();
 			<th>Name</th>
 			<th>Email</th>
 			<th>Phone</th>
+			<th>Action</th>
 		</tr>
 		<?php
 			foreach ($data as $key =>$value ) {
@@ -40,6 +41,16 @@ $userdata= $show->readUserdata();
 			<td><?php  echo $value['name'];?></td>
 			<td><?php  echo $value['email'];?></td>
 			<td><?php  echo $value['phone'];?></td>
+			<td>
+				<a href="Showbyidforstudents.php?id=<?php  echo $value['id'];?>">edit
+				</a>
+				||
+				<a href="deleteforstudents.php?id=<?php  echo $value['id'];?>">delete
+				</a>
+				||
+				<a href="softdeleteforstudents.php?id=<?php  echo $value['id'];?>">Soft Delete
+				</a>
+			</td>
 		</tr>
 		<?php
 		
