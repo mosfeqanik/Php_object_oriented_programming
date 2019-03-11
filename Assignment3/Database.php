@@ -54,7 +54,17 @@ class Database implements Crud
 		return $result;
 	
 	}
+	//reset method
+	public function showForReset()
+	{
+		$Select="SELECT * FROM students WHERE deleted_at IS NOT NULL";
+		$statement=$this->conn->prepare($Select);
+		$statement->execute();
+		$result = $statement->fetchAll();
 
+		return $result;
+	
+	}
 	//Show all data  from users table from database 
 	public function readUserdata()
 	{
@@ -86,6 +96,7 @@ class Database implements Crud
 		)
 	);
 	echo "registration is completed";
+	header("location:login.php");
 
 	}
 
@@ -160,10 +171,10 @@ class Database implements Crud
 	}
 
 	// update method is created
-	public function updateStudents($name,$email,$phone,$id)
+	public function updateStudents($name,$email,$phone,$salary,$id)
 	{	
 		// $password=md5($password);
-		$update_query="UPDATE students SET name=:name, email=:email,phone=:phone WHERE id=:id";
+		$update_query="UPDATE students SET name=:name, email=:email,phone=:phone,salary=:salary WHERE id=:id";
 		$statement=$this->conn->prepare($update_query);
 		$statement->execute
 	(
@@ -173,7 +184,7 @@ class Database implements Crud
 			":email"=>$email,
 			":phone"=>$phone,
 			":id"=>$id,
-
+			":salary"=>$salary,
 		)
 	);
 	}
@@ -225,6 +236,22 @@ class Database implements Crud
 				)
 			);
 	}
+
+	//reset method is created
+	public function resetThatId($id)
+	{	
+		$update_query="UPDATE students SET deleted_at= NULL  WHERE id=:id";
+		$statement=$this->conn->prepare($update_query);
+		$statement->execute
+	(
+		array
+		(
+			":id"=>$id,
+		)
+	);
+	}
+
+
 }
 
 

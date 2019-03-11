@@ -26,21 +26,30 @@ $userdata= $show->readUserdata();
 </head>
 <body>
 	<a href="insert.php"> i want to insert data</a>
+	<a href="logout.php">logout.php</a>
+
+	<form action=""method="POST">
+		label
+	</form>
+
 	<table border="2px solid black">
 		<tr>
 			<th>Name</th>
 			<th>Email</th>
 			<th>Phone</th>
+			<th>salary</th>
 			<th>Action</th>
+			<th>Reset</th>
 		</tr>
 		<?php
-			foreach ($data as $key =>$value ) {
+			foreach ($data as $value ) {
 			
 		?>
 		<tr>
 			<td><?php  echo $value['name'];?></td>
 			<td><?php  echo $value['email'];?></td>
 			<td><?php  echo $value['phone'];?></td>
+			<td><?php echo $value['salary']; ?></td>
 			<td>
 				<a href="Showbyidforstudents.php?id=<?php  echo $value['id'];?>">edit
 				</a>
@@ -56,6 +65,7 @@ $userdata= $show->readUserdata();
 		
 			}	
 		?>
+		<a href="reset.php">Reset</a>
 	</table>
 	<table border="2px solid black">
 		<tr>
@@ -84,7 +94,7 @@ $userdata= $show->readUserdata();
 		<?php
 		
 			}	
-		?>
+		?>  
 	</table>
 </body>
 </html>

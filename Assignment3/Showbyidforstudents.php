@@ -9,11 +9,12 @@ $Showbyid = new Database();
 			$name=$_POST["name"];
 			$email=$_POST["email"];
 			$phone=$_POST["phone"];
+			$salary=$_POST["salary"];
 			$id=$_GET["id"];
 
 
-			echo $name."||".$email."||".$phone."||".$id;
-			$Showbyid->updateStudents($name,$email,$phone,$id);
+			echo $name."||".$email."||".$phone."||".$id."||".$salary;
+			$Showbyid->updateStudents($name,$email,$phone,$salary,$id);
 			echo "updated";
 			// print_r($result);
 
@@ -50,6 +51,8 @@ $Showbyid = new Database();
 		<input type="text" name="email" value="<?php  echo $value['email'];?>"><br>
 		<label>phone</label>
 		<input type="text" name="phone" value="<?php  echo $value['phone'];?>"><br>
+		<label>salary</label>
+		<input type="text" name="salary" value="<?php  echo $value['salary'];?>"><br>
 		<?php
 			}
 		}
