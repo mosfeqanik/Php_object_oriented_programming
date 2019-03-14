@@ -18,6 +18,7 @@ $userdata= $show->readUserdata();
 
 
 
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -27,28 +28,51 @@ $userdata= $show->readUserdata();
 <body>
 	<a href="insert.php"> i want to insert data</a>
 	<a href="logout.php">logout.php</a>
-
-	<form action=""method="POST">
-		label
+	<form action="#"method="POST">
+		<label>Enter Your search salary amount </label>
+		<input type="text" name="amount">
+		<input type="submit" name="submit">
 	</form>
 
 	<table border="2px solid black">
 		<tr>
+			<?php
+			if (isset($_POST["submit"])) 
+			{
+	
+				$amount=$_POST["amount"];
+				$searchdata= $show->searchquery($amount);
+				// print_r($searchdata);
+			?>
 			<th>Name</th>
 			<th>Email</th>
 			<th>Phone</th>
 			<th>salary</th>
-			<th>Action</th>
-			<th>Reset</th>
+			<!-- <th>Action</th> -->
+		</tr>
+			<?php
+			
+				foreach ($searchdata as $value ) {
+
+			?>
+		<tr>
+			<td><?php  echo $value['name'];  ?></td>
+			<td><?php  echo $value['email']; ?></td>
+			<td><?php  echo $value['phone']; ?></td>
+			<td><?php echo $value['salary']; ?></td>
 		</tr>
 		<?php
-			foreach ($data as $value ) {
+			}
+		}
+			else
+			{
+				foreach ($data as $value ) {
 			
 		?>
 		<tr>
-			<td><?php  echo $value['name'];?></td>
-			<td><?php  echo $value['email'];?></td>
-			<td><?php  echo $value['phone'];?></td>
+			<td><?php  echo $value['name'];  ?></td>
+			<td><?php  echo $value['email']; ?></td>
+			<td><?php  echo $value['phone']; ?></td>
 			<td><?php echo $value['salary']; ?></td>
 			<td>
 				<a href="Showbyidforstudents.php?id=<?php  echo $value['id'];?>">edit
@@ -63,7 +87,8 @@ $userdata= $show->readUserdata();
 		</tr>
 		<?php
 		
-			}	
+			}
+		} 
 		?>
 		<a href="reset.php">Reset</a>
 	</table>

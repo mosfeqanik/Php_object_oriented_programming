@@ -251,6 +251,25 @@ class Database implements Crud
 	);
 	}
 
+	//search method 
+	public function searchquery($range)
+	{
+		if (empty($range)) {
+			$range="40000";
+		}
+		$Select="SELECT * FROM students WHERE salary<=:range";
+		$statement=$this->conn->prepare($Select);
+		$statement->execute(
+			array
+		(
+			":range"=>$range,
+		)
+
+		);
+		$result = $statement->fetchAll();
+	return $result;
+	}
+
 
 }
 
