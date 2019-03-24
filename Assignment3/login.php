@@ -10,9 +10,17 @@ if (isset($_POST["submit"]))
 	$password=$_POST["password"];
 
 	$status=$login->login($username,$password);
-	if ($status==1) {
+	if (count($status)==1) {
+		// print_r($status);
+		// die("wow");
 		session_start();
 		$_SESSION['user'] = 'true';
+		foreach ($status as $value) {
+			$_SESSION['id']		 = $value['id'];
+			$_SESSION['name']    = $value['username'];
+
+			
+		}
 		header("location:show.php");
 	}
 }

@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6f9439a8-f546-4a8b-b7eb-f73ff55f3d21" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/Execise.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Execise.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assignment3/Database.php" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment3/Database.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment3/registration.php" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment3/registration.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment3/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment3/login.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assignment3/show.php" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment3/show.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -12,13 +14,16 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/Autoloadfiles/composer.json</pharConfigPath>
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Book.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+            <state relative-caret-position="272">
+              <caret line="16" column="5" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -27,6 +32,16 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/Autoloadfiles/vendor/composer" />
+      <path value="$PROJECT_DIR$/Autoloadfiles/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/Autoloadfiles/vendor/mpdf/mpdf" />
+      <path value="$PROJECT_DIR$/Autoloadfiles/vendor/setasign/fpdi" />
+      <path value="$PROJECT_DIR$/Autoloadfiles/vendor/myclabs/deep-copy" />
+      <path value="$PROJECT_DIR$/Autoloadfiles/vendor/paragonie/random_compat" />
+    </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="170" />
@@ -46,6 +61,11 @@
             <path>
               <item name="Exercise" type="b2602c69:ProjectViewProjectNode" />
               <item name="Exercise" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Exercise" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Exercise" type="462c0819:PsiDirectoryNode" />
+              <item name="First_laravel" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -85,16 +105,20 @@
       <workItem from="1551940517088" duration="58000" />
       <workItem from="1551940787680" duration="12000" />
       <workItem from="1552280884325" duration="600000" />
+      <workItem from="1552622925412" duration="579000" />
+      <workItem from="1552697647274" duration="171000" />
+      <workItem from="1552708192345" duration="69000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="740000" />
+    <option name="totallyTimeSpent" value="1559000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1913767" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20045386" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -121,8 +145,8 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Book.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+        <state relative-caret-position="272">
+          <caret line="16" column="5" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
         </state>
       </provider>
     </entry>

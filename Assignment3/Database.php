@@ -115,7 +115,7 @@ class Database implements Crud
 		);
 		$result = $statement->fetchAll();
 
-		return 1;
+		return $result;
 	
 	}
 

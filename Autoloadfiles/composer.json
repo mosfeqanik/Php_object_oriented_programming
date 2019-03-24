@@ -1,0 +1,10 @@
+{
+	"autoload":{
+		"psr-4":{
+			"hihere\\":"src"
+		}
+	},
+	"require": {
+		"mpdf/mpdf": "^7.1"
+	}
+}

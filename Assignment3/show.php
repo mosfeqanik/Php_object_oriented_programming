@@ -9,8 +9,8 @@ $userdata= $show->readUserdata();
 
 // print_r($data);
 // foreach ($data as $key => $value) 
-// {
-// 	echo $value["name"]."<br>";
+// {$
+// 	echo value["name"]."<br>";
 // 	echo $value["email"]."<br>";
 // 	echo $value["phone"]."<br>";
 
@@ -27,7 +27,7 @@ $userdata= $show->readUserdata();
 </head>
 <body>
 	<a href="insert.php"> i want to insert data</a>
-	<a href="logout.php">logout.php</a>
+	<a href="logout.php">(<?php echo $_SESSION['name']; ?>)logout.php</a>
 	<form action="#"method="POST">
 		<label>Enter Your search salary amount </label>
 		<input type="text" name="amount">
